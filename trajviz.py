@@ -18,7 +18,8 @@ curved_trajectory = [
   [1.7,1.7,1.5],
   [1.7,1.7,1.5],
   [1.0,1.0,1.5],
-  [0.0,0.0,1.5]
+  [0.0,0.0,1.5],
+  [0.0,0.0,0.0]
 ]
 
 # Convert the list of curved points into separate x, y, and z arrays
