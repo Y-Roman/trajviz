@@ -5,21 +5,20 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 # Create a new list of points with a curved path for the first two points
+DH = 1.5
+
 curved_trajectory = [
-  [0.0,0.0,0.0],
-  [0.0, 0.0, 1.5],
-  [0.0, 1.0, 1.5],
-  [0.0, 2.0, 1.5],
-  [1.0, 2.0, 1.5],
-  [2.0, 2.0, 1.5],
-  [2.0,1.7,1.5],
-  [2.0,2.0,1.5],
-  [1.7,2.0,1.5],
-  [1.7,1.7,1.5],
-  [1.7,1.7,1.5],
-  [1.0,1.0,1.5],
-  [0.0,0.0,1.5],
-  [0.0,0.0,0.0]
+  [0.0,0.0,DH],
+  [0.0,2.0,DH],
+  [1.0,2.0,DH],
+  [1.0,0.0,DH],
+  [2.0,0.0,DH],
+  [2.0,2.0,DH],
+  [2.0,0.0,DH],
+  [1.0,0.0,DH],
+  [1.0,2.0,DH],
+  [0.0,2.0,DH],
+  [0.0,0.0,DH]
 ]
 
 # Convert the list of curved points into separate x, y, and z arrays
@@ -47,6 +46,7 @@ fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
 # Plot the interpolated trajectory as a line
+
 ax.plot(x_eval, y_eval, z_eval, '-')
 
 # Set the axis labels and title
@@ -54,6 +54,13 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
 ax.set_title('Object Tracking Drone Smoothened Trajectory')
+
+#ax.plot(x_curved, y_curved, z_curved, '-')
+
+#ax.set_xlabel('x_linear')
+#ax.set_ylabel('y_linear')
+#ax.set_zlabel('z_linear')
+#ax.set_title('Object Tracking Drone Linear Trajectory')
 
 # Show the plot
 plt.show()
